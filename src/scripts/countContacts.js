@@ -1,8 +1,7 @@
-import * as fs from 'node:fs/promises';
-import { PATH_DB } from '../constants/contacts.js';
+import { readContacts } from '../utils/readContacts.js';
 
 export const countContacts = async () => {
-    const contacts = JSON.parse(await fs.readFile(PATH_DB, 'utf-8'));
+    const contacts = await readContacts();
     return contacts.length;
 };
 
