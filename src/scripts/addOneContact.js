@@ -3,7 +3,7 @@ import { writeContacts } from '../utils/writeContacts.js';
 import { readContacts } from '../utils/readContacts.js';
 
 export const addOneContact = async () => {
-    const contacts = readContacts();
+    const contacts = await readContacts();
     contacts.push(createFakeContact());
     await writeContacts(contacts);
 };
